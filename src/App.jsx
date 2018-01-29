@@ -89,7 +89,7 @@ class App extends React.Component {
                         </li>
                     );
                 });
-
+                //liste des episodes de la ou les serie(s)
                 return (
                     <li key={serie.id}>
                         {serie.seriesName}
