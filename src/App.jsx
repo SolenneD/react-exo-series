@@ -2,7 +2,9 @@ import React from 'react';
 import './App.css';
 
 class App extends React.Component {
+    // props est un composant : renvoient des éléments React décrivant ce qui devrait apparaître à l'écran.
     constructor(props) {
+        //super est utilisé afin d'appeler ou d'accéder à des fonctions définies sur l'objet parent
         super();
         this.series = [];
         this.episodes = [];
@@ -15,7 +17,7 @@ class App extends React.Component {
     }
 
     componentDidMount() {
-    //fonction appelee a la construction
+    //methode appelee a la construction
 
         fetch('seriesList.json')
             .then(response => response.json()) //promesse
@@ -47,6 +49,9 @@ class App extends React.Component {
         if (e.target.value.length > 0) {
             this.series.forEach(serie => {
                 if (serie.seriesName.toLowerCase().indexOf(e.target.value.toLowerCase()) !== -1) {
+
+                    //La méthode indexOf() renvoie le premier indice pour lequel on trouve un élément donné dans un tableau. Si l'élément                       cherché n'est pas présent dans le tableau, la méthode renverra -1.
+
                     matched.push(serie);
                 }
             });
@@ -113,7 +118,7 @@ class App extends React.Component {
 
             data = (
                 <div>
-                    <input type="text" id="seriesTitleSearch" onChange={this.handleChange} />
+                    <input placeholder="Entre le nom de ta série" type="text" id="seriesTitleSearch" onChange={this.handleChange} />
                     {matched}
                 </div>
             )

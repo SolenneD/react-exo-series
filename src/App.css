@@ -2,6 +2,18 @@
   text-align: center;
 }
 
+#seriesTitleSearch{
+  padding: 10px;
+  margin: 3%;
+  width: 30%;
+  background-color: #ffbca3;
+  color: #ffffff;
+}
+#seriesTitleSearch + p{
+  margin-top: 0;
+  margin-left: 3%;
+}
+
 
 .loader {
   animation: spin infinite 1s linear;
